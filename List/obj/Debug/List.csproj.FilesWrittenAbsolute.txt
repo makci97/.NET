@@ -3,3 +3,8 @@
 /home/maxim/c#/RiderProjects/List/bin/Debug/List.exe
 /home/maxim/c#/RiderProjects/List/obj/Debug/List.exe
 /home/maxim/c#/RiderProjects/List/obj/Debug/List.exe.mdb
+/home/maxim/c#/RiderProjects/git/.NET/List/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/maxim/c#/RiderProjects/git/.NET/List/bin/Debug/List.exe.mdb
+/home/maxim/c#/RiderProjects/git/.NET/List/bin/Debug/List.exe
+/home/maxim/c#/RiderProjects/git/.NET/List/obj/Debug/List.exe
+/home/maxim/c#/RiderProjects/git/.NET/List/obj/Debug/List.exe.mdb

@@ -1,75 +1,84 @@
-﻿namespace List
+﻿using System.Collections;
+
+namespace List
 {
-    public class List<T>
+    public class List<T>: IEnumerable
     {
-        private class Node
+        public class Node
         {
-            public Node next;
-            public Node prev;
-            public T data;
+            public Node Next;
+            public Node Prev;
+            public T Data;
         }
 
-        private Node head = null;
-        private Node tail = null;
-        private int size = 0;
+        private Node _head;
+        private Node _tail;
+        private int _size;
+
+        public List()
+        {
+            _head = null;
+            _tail = null;
+            _size = 0;
+        }
 
         public void PushBack(T t)
         {
             Node newNode = new Node();
-            newNode.next = tail;
-            newNode.prev = null;
-            newNode.data = t;
+            newNode.Next = _tail;
+            newNode.Prev = null;
+            newNode.Data = t;
 
-            if (tail != null)
+            if (_tail != null)
             {
                 // List is not empty
-                tail.prev = newNode;
+                _tail.Prev = newNode;
             }
             else
             {
                 // List is empty, therefore head == null too
-                head = newNode;
+                _head = newNode;
             }
-            tail = newNode;
-            ++size;
+            _tail = newNode;
+            ++_size;
         }
 
         public void PushFront(T t)
         {
             Node newNode = new Node();
-            newNode.next = null;
-            newNode.prev = head;
-            newNode.data = t;
+            newNode.Next = null;
+            newNode.Prev = _head;
+            newNode.Data = t;
 
-            if (head != null)
+            if (_head != null)
             {
                 // List is not empty
-                head.next = newNode;
+                _head.Next = newNode;
             }
             else
             {
                 // List is empty, therefore tail == null too
-                tail = newNode;
+                _tail = newNode;
             }
-            head = newNode;
-            ++size;
+            _head = newNode;
+            ++_size;
         }
 
         public T PopBack()
         {
-            if (tail != null)
+            if (_tail != null)
             {
-                T temp = tail.data;
-                if (head == tail)
+                T temp = _tail.Data;
+                if (_head == _tail)
                 {
                     // pop last elem
-                    head = tail = null;
+                    _head = _tail = null;
                 }
                 else
                 {
-                    tail = tail.next;
+                    _tail = _tail.Next;
                 }
-                --size;
+                --_size;
                 return temp;
             }
             else
@@ -81,19 +90,19 @@
 
         public T PopFront()
         {
-            if (head != null)
+            if (_head != null)
             {
-                T temp = head.data;
-                if (head == tail)
+                T temp = _head.Data;
+                if (_head == _tail)
                 {
                     // pop last elem
-                    head = tail = null;
+                    _head = _tail = null;
                 }
                 else
                 {
-                    head = head.prev;
+                    _head = _head.Prev;
                 }
-                --size;
+                --_size;
                 return temp;
             }
             else
@@ -105,9 +114,9 @@
 
         public T Back()
         {
-            if (tail != null)
+            if (_tail != null)
             {
-                return tail.data;
+                return _tail.Data;
             }
             else
             {
@@ -118,9 +127,9 @@
 
         public T Front()
         {
-            if (head != null)
+            if (_head != null)
             {
-                return head.data;
+                return _head.Data;
             }
             else
             {
@@ -131,7 +140,73 @@
 
         public int Size()
         {
-            return size;
+            return _size;
         }
+
+
+        public class ListEnum : IEnumerator
+        {
+            private List<T> list;
+            private Node _cur;
+
+            // Enumerators are positioned before the first element
+            // until the first MoveNext() call.
+            private int _position;
+
+            public int Position
+            {
+                get { return _position; }
+                set { _position = value; }
+            }
+
+            public ListEnum(List<T> l)
+            {
+                list = l;
+                _cur = list._tail;
+                Position = -1;
+            }
+
+            public bool MoveNext()
+            {
+                Position++;
+                _cur = _cur.Next;
+                return (_cur != null);
+            }
+
+            public void Reset()
+            {
+                Position = -1;
+                _cur = list._tail;
+            }
+
+            object IEnumerator.Current => Current;
+
+            public T Current
+            {
+                get
+                {
+                    try
+                    {
+                        return _cur.Data;
+                    }
+                    catch (System.Exception e)
+                    {
+                        throw e;
+                    }
+                }
+            }
+        }
+
+
+        public ListEnum GetEnumerator()
+        {
+            return new ListEnum(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return (IEnumerator)GetEnumerator();
+        }
+
     }
 }

@@ -1,0 +1,9 @@
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\bin\Debug\netcoreapp1.1\calculator.deps.json
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\bin\Debug\netcoreapp1.1\calculator.runtimeconfig.json
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\bin\Debug\netcoreapp1.1\calculator.runtimeconfig.dev.json
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\bin\Debug\netcoreapp1.1\calculator.dll
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\bin\Debug\netcoreapp1.1\calculator.pdb
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\obj\Debug\netcoreapp1.1\calculator.csprojResolveAssemblyReference.cache
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\obj\Debug\netcoreapp1.1\calculator.AssemblyInfo.cs
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\obj\Debug\netcoreapp1.1\calculator.dll
+c:\users\makci\documents\visual studio 2017\Projects\calculator\calculator\obj\Debug\netcoreapp1.1\calculator.pdb

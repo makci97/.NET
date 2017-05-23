@@ -69,30 +69,40 @@ namespace List
         {
             List<int> list = new List<int>();
 
-            for (int i = 0; i < 2; i++)
+
+            Test<int>.Size(list);
+            Test<int>.PushIntElems(list);
+            foreach (var l in list)
             {
-                Console.WriteLine("{0} testing sprint:", i + 1);
-
-
-                Test<int>.Size(list);
-                Test<int>.PushIntElems(list);
-                Test<int>.Enumerable(list);
-                Test<int>.Size(list);
-                try
-                {
-                    Test<int>.PopElems(list);
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e);
-                }
-                finally
-                {
-                    Console.WriteLine("Some strange thing");
-                }
-                Test<int>.Size(list);
-
+                Console.Write("{0} ", l);
             }
+            Test<int>.Size(list);
+
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    Console.WriteLine("{0} testing sprint:", i + 1);
+
+
+            //    Test<int>.Size(list);
+            //    Test<int>.PushIntElems(list);
+            //    Test<int>.Enumerable(list);
+            //    Test<int>.Size(list);
+            //    try
+            //    {
+            //        Test<int>.PopElems(list);
+            //    }
+            //    catch (Exception e)
+            //    {
+            //        Console.WriteLine(e);
+            //    }
+            //    finally
+            //    {
+            //        Console.WriteLine("Some strange thing");
+            //    }
+            //    Test<int>.Size(list);
+
+            //}
+            Console.ReadKey();
         }
     }
 }

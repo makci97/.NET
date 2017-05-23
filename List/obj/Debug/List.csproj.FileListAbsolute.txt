@@ -1,0 +1,5 @@
+C:\Users\makci\Documents\Visual Studio 2017\Projects\List\bin\Debug\List.exe
+C:\Users\makci\Documents\Visual Studio 2017\Projects\List\bin\Debug\List.pdb
+C:\Users\makci\Documents\Visual Studio 2017\Projects\List\obj\Debug\List.csprojResolveAssemblyReference.cache
+C:\Users\makci\Documents\Visual Studio 2017\Projects\List\obj\Debug\List.exe
+C:\Users\makci\Documents\Visual Studio 2017\Projects\List\obj\Debug\List.pdb

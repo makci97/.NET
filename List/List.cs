@@ -162,21 +162,28 @@ namespace List
             public ListEnum(List<T> l)
             {
                 list = l;
-                _cur = list._tail;
+                _cur = list._head;
                 Position = -1;
             }
 
             public bool MoveNext()
             {
+                if (Position == -1)
+                {
+                    _cur = list._head;
+                }
+                else
+                {
+                    _cur = _cur.Prev;
+                }
                 Position++;
-                _cur = _cur.Next;
                 return (_cur != null);
             }
 
             public void Reset()
             {
                 Position = -1;
-                _cur = list._tail;
+                _cur = list._head;
             }
 
             object IEnumerator.Current => Current;

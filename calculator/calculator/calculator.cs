@@ -348,12 +348,12 @@ namespace calculator
                 case "/": return 4;
                 case "!+": return 5; // унарный оператор
                 case "!-": return 5; // унарный оператор
-                case "Sin": return 5;
-                case "Cos": return 5;
-                case "Tg": return 5;
-                case "Ctg": return 5;
-                case "Sqrt": return 5;
                 case "^": return 6;
+                case "Sin": return 7;
+                case "Cos": return 7;
+                case "Tg": return 7;
+                case "Ctg": return 7;
+                case "Sqrt": return 7;
                 default: return 99;
             }
         }

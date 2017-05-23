@@ -7080,10 +7080,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\makci\\documents\\visual studio 2017\\Projects\\calculator\\calculator\\calculator.csproj",
+      "projectUniqueName": "C:\\Users\\makci\\documents\\visual studio 2017\\Projects\\calculator\\calculator\\calculator.csproj",
       "projectName": "calculator",
-      "projectPath": "c:\\users\\makci\\documents\\visual studio 2017\\Projects\\calculator\\calculator\\calculator.csproj",
-      "outputPath": "c:\\users\\makci\\documents\\visual studio 2017\\Projects\\calculator\\calculator\\obj\\",
+      "projectPath": "C:\\Users\\makci\\documents\\visual studio 2017\\Projects\\calculator\\calculator\\calculator.csproj",
+      "outputPath": "C:\\Users\\makci\\documents\\visual studio 2017\\Projects\\calculator\\calculator\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

@@ -1,0 +1,18 @@
+﻿<Page x:Class="WpfApp1.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="MainPage">
+
+    <Grid>
+        <Button x:Name="back" Content="Назад" Height="27" Margin="0,134,0,0" VerticalAlignment="Top" Width="76" Click="button_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="settings" Content="Настройки" Height="25" Margin="0,166,0,0" VerticalAlignment="Top" Width="76" Click="button1_Click" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+        <Button x:Name="exit" Content="Выход" Height="35" Margin="0,216,0,0" VerticalAlignment="Top" Width="76" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Click="button2_Click"/>
+        <Label x:Name="label" Content="Лого" Height="30" Margin="0,45,0,0" VerticalAlignment="Top" Width="76" FlowDirection="RightToLeft" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
+
+    </Grid>
+</Page>

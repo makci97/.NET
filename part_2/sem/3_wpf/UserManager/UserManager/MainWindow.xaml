@@ -1,0 +1,159 @@
+﻿<Window
+    x:Class="UserManager.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:UserManager"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="698.779"
+    Height="346.05"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource BackBrush}">
+        <DataGrid
+            x:Name="UserTable"
+            Margin="0,70,230.613,10.162"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            ItemsSource="{Binding UserList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="2*"
+                    Binding="{Binding Name}"
+                    ClipboardContentBinding="{x:Null}"
+                    Header="Имя" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Phone}"
+                    ClipboardContentBinding="{x:Null}"
+                    Header="Телефон" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Email}"
+                    ClipboardContentBinding="{x:Null}"
+                    Header="Почта" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Type}"
+                    ClipboardContentBinding="{x:Null}"
+                    Header="Права" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            x:Name="btn_load"
+            Width="88"
+            Margin="102,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding LoadUserCommand}"
+            Content="Load Users" />
+        <Button
+            x:Name="btn_createUser"
+            Width="87"
+            Margin="10,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding CreateUserCommand}"
+            Content="Create User" />
+        <ListView
+            x:Name="listView"
+            Width="215"
+            Height="243"
+            Margin="0,70,-0.387,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Stretch"
+            ItemsSource="{Binding UserList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Width="Auto" Text="{Binding Name}" />
+                        <Button
+                            Padding="15,1,15,2"
+                            HorizontalAlignment="Right"
+                            HorizontalContentAlignment="Center"
+                            Command="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.EditUserCommand}"
+                            CommandParameter="{Binding}"
+                            Content="Edit" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox
+            x:Name="textBoxName"
+            Width="60"
+            Height="22"
+            Margin="65,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding FilterStringName, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="textBoxPhone"
+            Width="75"
+            Height="22"
+            Margin="242,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding FilterStringPhone, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="textBoxEmail"
+            Width="75"
+            Height="22"
+            Margin="417,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="{Binding FilterStringEmail, UpdateSourceTrigger=PropertyChanged}"
+            TextWrapping="Wrap" />
+        <ComboBox
+            x:Name="comboBox"
+            Width="93"
+            Margin="583,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            SelectedIndex="{Binding FilterBoxUserType, UpdateSourceTrigger=PropertyChanged}">
+            <ComboBoxItem Content="Любой" />
+            <ComboBoxItem Content="Пользователь" />
+            <ComboBoxItem Content="Модератор" />
+            <ComboBoxItem Content="Админ" />
+        </ComboBox>
+        <TextBlock
+            x:Name="textBlock_Copy"
+            Height="22"
+            Margin="34,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Имя:"
+            TextAlignment="Right"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="textBlock_Copy1"
+            Height="22"
+            Margin="187,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Телефон:"
+            TextAlignment="Right"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="textBlock_Copy2"
+            Height="22"
+            Margin="376,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Почта:"
+            TextAlignment="Right"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="textBlock_Copy3"
+            Height="22"
+            Margin="541,34,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="Права:"
+            TextAlignment="Right"
+            TextWrapping="Wrap" />
+    </Grid>
+</Window>
